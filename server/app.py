@@ -44,7 +44,7 @@ class Plants(Resource):
 class PlantByID(Resource):
     def get(self, id):
         with app.app_context():
-            plant = db.session.get(Plant, id)  # Updated line
+            plant = db.session.get(Plant, id)  
             if plant:
                 return plant.to_dict(), 200
             return {'message': 'Plant not found'}, 404
